@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctu5ey1eif03q"]
+
+[ext_resource type="Script" path="res://Scripts/Jogador/Jogador.gd" id="1_yre7x"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/StateMachine.gd" id="2_s287i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to5gb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8ks75"]
+
+[node name="FazeTestes" type="Node2D"]
+
+[node name="Jogador" type="CharacterBody2D" parent="."]
+position = Vector2(299, 165)
+script = ExtResource("1_yre7x")
+metadata/_edit_group_ = true
+
+[node name="StateMachine" type="Node" parent="Jogador"]
+script = ExtResource("2_s287i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogador"]
+shape = SubResource("CapsuleShape2D_to5gb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Jogador"]
+position = Vector2(0.5, 2.38419e-06)
+scale = Vector2(21, 15)
+mesh = SubResource("CapsuleMesh_8ks75")
