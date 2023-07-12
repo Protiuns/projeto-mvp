@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctu5ey1eif03q"]
+[gd_scene load_steps=7 format=3 uid="uid://ctu5ey1eif03q"]
 
 [ext_resource type="Script" path="res://Scripts/Jogador/Jogador.gd" id="1_yre7x"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/StateMachine.gd" id="2_s287i"]
+[ext_resource type="Script" path="res://Scripts/Monstros/Monstro.gd" id="3_hr1e3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to5gb"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8ks75"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfhdj"]
 
 [node name="FazeTestes" type="Node2D"]
 
@@ -21,6 +24,23 @@ script = ExtResource("2_s287i")
 shape = SubResource("CapsuleShape2D_to5gb")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Jogador"]
+position = Vector2(0.5, 2.38419e-06)
+scale = Vector2(21, 15)
+mesh = SubResource("CapsuleMesh_8ks75")
+
+[node name="Monstro" type="CharacterBody2D" parent="."]
+position = Vector2(523, 68)
+script = ExtResource("3_hr1e3")
+metadata/_edit_group_ = true
+
+[node name="StateMachine" type="Node" parent="Monstro"]
+script = ExtResource("2_s287i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monstro"]
+shape = SubResource("CapsuleShape2D_to5gb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Monstro"]
+material = SubResource("ShaderMaterial_xfhdj")
 position = Vector2(0.5, 2.38419e-06)
 scale = Vector2(21, 15)
 mesh = SubResource("CapsuleMesh_8ks75")
