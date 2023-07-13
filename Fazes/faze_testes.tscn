@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctu5ey1eif03q"]
+[gd_scene load_steps=15 format=3 uid="uid://ctu5ey1eif03q"]
 
 [ext_resource type="Script" path="res://Scripts/Jogador/Jogador.gd" id="1_yre7x"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/StateMachine.gd" id="2_s287i"]
@@ -7,6 +7,93 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to5gb"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8ks75"]
+
+[sub_resource type="Animation" id="Animation_f4178"]
+resource_name = "Andando"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3.96), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"IrAtras"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_lg333"]
+resource_name = "Parado"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_j8gfp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pgntd"]
+_data = {
+"Andando": SubResource("Animation_f4178"),
+"Parado": SubResource("Animation_lg333"),
+"RESET": SubResource("Animation_j8gfp")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_do4s6"]
+animation = &"Andando"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_s8i7a"]
+fadein_time = 2.15
+metadata/Velocidade = 355.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2guw4"]
+animation = &"Parado"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3cslq"]
+nodes/Andando/node = SubResource("AnimationNodeAnimation_do4s6")
+nodes/Andando/position = Vector2(26.6667, 213.333)
+nodes/Movimentando/node = SubResource("AnimationNodeOneShot_s8i7a")
+nodes/Movimentando/position = Vector2(266.667, 106.667)
+nodes/Parado/node = SubResource("AnimationNodeAnimation_2guw4")
+nodes/Parado/position = Vector2(26.6667, 106.667)
+nodes/output/position = Vector2(453.333, 106.667)
+node_connections = [&"output", 0, &"Movimentando", &"Movimentando", 0, &"Parado", &"Movimentando", 1, &"Andando"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xfhdj"]
 
@@ -33,14 +120,23 @@ position = Vector2(523, 68)
 script = ExtResource("3_hr1e3")
 metadata/_edit_group_ = true
 
-[node name="StateMachine" type="Node" parent="Monstro"]
-script = ExtResource("2_s287i")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Monstro"]
+libraries = {
+"": SubResource("AnimationLibrary_pgntd")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Monstro"]
+tree_root = SubResource("AnimationNodeBlendTree_3cslq")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/Movimentando/active = true
+parameters/Movimentando/internal_active = true
+parameters/Movimentando/request = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monstro"]
 shape = SubResource("CapsuleShape2D_to5gb")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Monstro"]
 material = SubResource("ShaderMaterial_xfhdj")
-position = Vector2(0.5, 2.38419e-06)
 scale = Vector2(21, 15)
 mesh = SubResource("CapsuleMesh_8ks75")
