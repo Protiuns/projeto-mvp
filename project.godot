@@ -15,6 +15,13 @@ run/main_scene="res://Fazes/faze_testes.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=512
+window/size/viewport_height=288
+window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
+
 [input]
 
 Cima={
@@ -54,5 +61,6 @@ Esquiva={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=3
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

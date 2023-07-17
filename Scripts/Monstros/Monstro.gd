@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 enum Estados {Parado , Perseguindo , Atacando, Machucando , Morrendo}
 @export var Estado = Estados.Parado
-const velocidade = 75
+const velocidade = 30
 @onready var dir =  $"../Jogador".position - position
 
 var indoAtras = false

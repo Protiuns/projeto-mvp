@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var velocidade = 150
+var velocidade = 50
 
 func  _physics_process(delta):
 	# entradas
