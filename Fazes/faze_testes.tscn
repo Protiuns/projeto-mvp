@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://ctu5ey1eif03q"]
+[gd_scene load_steps=57 format=3 uid="uid://ctu5ey1eif03q"]
 
 [ext_resource type="Script" path="res://Scripts/Jogador/Jogador.gd" id="1_yre7x"]
 [ext_resource type="Script" path="res://Scripts/Jogador/JocadorStates.gd" id="2_lfhxy"]
@@ -826,6 +826,8 @@ _data = {
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8ks75"]
 
+[sub_resource type="Gradient" id="Gradient_q5an1"]
+
 [node name="FazeTestes" type="Node2D"]
 
 [node name="Jogador" type="CharacterBody2D" parent="."]
@@ -890,3 +892,13 @@ shape = SubResource("CapsuleShape2D_to5gb")
 material = SubResource("ShaderMaterial_xfhdj")
 scale = Vector2(21, 15)
 mesh = SubResource("CapsuleMesh_8ks75")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(339, 171)
+speed_scale = 1.9
+lifetime_randomness = 0.08
+emission_shape = 1
+emission_sphere_radius = 3.0
+gravity = Vector2(0, -30)
+color = Color(1, 0.513726, 0.290196, 1)
+color_ramp = SubResource("Gradient_q5an1")
