@@ -13,7 +13,18 @@ func _ready():
 func _EstadoLogica (delta):
 	pass
 func _EstadoTranzicao(delta):
-	pass
+	match estado:
+		estados.Parado:
+			pass
+		estados.Andando:
+			pass
+		estados.Golpe1:
+			pass
+		estados.Golpe2:
+			pass
+		estados.Machucado:
+			pass
+		
 func _EstadoEntrar(novoEstado , antigoEstado):
 	pass
 func _EstadoSair(antigoEstado, novoEstado):
