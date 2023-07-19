@@ -750,7 +750,6 @@ blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c3qvt"]
-graph_offset = Vector2(-447.4, 258.589)
 nodes/Andando/node = SubResource("AnimationNodeBlendSpace2D_bdqed")
 nodes/Andando/position = Vector2(-53.3333, 160)
 nodes/Atacando/node = SubResource("AnimationNodeOneShot_a5q54")

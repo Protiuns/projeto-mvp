@@ -15,7 +15,7 @@ func _ready():
 	call_deferred("set_estado" , estados.Parado)
 
 func _EstadoLogica (delta):
-	#print(estado)
+	
 	#print(acabouAnimacao)
 	match estado:
 		estados.Parado:
@@ -34,18 +34,18 @@ func _EstadoTranzicao(delta):
 		estados.Parado:
 			if jogador.botaoAtaque :
 				return estados.Golpe1
-			if (jogador.vetorEntrada.length() != 0):
+			elif (jogador.vetorEntrada.length() != 0):
 				return estados.Andando
 		estados.Andando:
 			if jogador.botaoAtaque :
 				return estados.Golpe1
-			if (jogador.velocity.length() ==0) :
+			elif (jogador.velocity.length() ==0) :
 				return estados.Parado
 		estados.Golpe1:
 			if acabouAtaque:
 				if segundoGolpe:
 					return estados.Golpe2
-				if ((jogador.vetorEntrada.length() == 0) and (jogador.velocity.length() ==0)):
+				elif ((jogador.vetorEntrada.length() == 0) and (jogador.velocity.length() ==0)):
 					return estados.Parado
 				else:
 					return estados.Andando
@@ -59,6 +59,7 @@ func _EstadoTranzicao(delta):
 			pass
 		
 func _EstadoEntrar(novoEstado , antigoEstado):
+	print(novoEstado)
 	match novoEstado:
 		estados.Parado:
 			arvoreAnimacao.set("parameters/Movimentando/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
@@ -79,10 +80,11 @@ func _EstadoSair(antigoEstado, novoEstado):
 				arvoreAnimacao.set("parameters/Atacando/request",AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
 			acabouAtaque =false
 		estados.Golpe2:
-			segundoGolpe = false
+			
 			arvoreAnimacao.set("parameters/AtacandoOutroBraço/request",AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
 			arvoreAnimacao.set("parameters/Atacando/request",AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)	
-		
+			segundoGolpe = false
+			acabouAtaque = false
 
 func FinalizouAtaque():
 	acabouAtaque = true
