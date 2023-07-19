@@ -1,9 +1,10 @@
-[gd_scene load_steps=57 format=3 uid="uid://ctu5ey1eif03q"]
+[gd_scene load_steps=58 format=3 uid="uid://ctu5ey1eif03q"]
 
 [ext_resource type="Script" path="res://Scripts/Jogador/Jogador.gd" id="1_yre7x"]
 [ext_resource type="Script" path="res://Scripts/Jogador/JocadorStates.gd" id="2_lfhxy"]
 [ext_resource type="Texture2D" uid="uid://brifeqmx5d3td" path="res://Imagens/Assets/LinkinhoSemSobras-Sheet.png" id="3_38ak2"]
 [ext_resource type="Script" path="res://Scripts/Monstros/Monstro.gd" id="3_hr1e3"]
+[ext_resource type="Script" path="res://Scripts/Jogador/JogadorArvoreAnimacao.gd" id="4_776p5"]
 [ext_resource type="Script" path="res://Fazes/MonstoStates.gd" id="4_ipdyw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to5gb"]
@@ -158,6 +159,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogadorStates")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"FinalizouAtaque"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_o4gec"]
 resource_name = "Golpe1Cima"
@@ -186,6 +201,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogadorStates")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"FinalizouAtaque"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_npr5f"]
@@ -216,6 +245,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogadorStates")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"FinalizouAtaque"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_74tag"]
 resource_name = "Golpe1Esquerda"
@@ -244,6 +287,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogadorStates")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"FinalizouAtaque"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_8nv2n"]
@@ -274,6 +331,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogadorStates")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"FinalizouAtaque"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_m180y"]
 resource_name = "Golpe2Cima"
@@ -302,6 +373,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogadorStates")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"FinalizouAtaque"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_5jmb2"]
@@ -332,6 +417,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogadorStates")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"FinalizouAtaque"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_4wu0y"]
 resource_name = "Golpe2Esquerda"
@@ -361,9 +460,24 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JogadorStates")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"FinalizouAtaque"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ynnfa"]
 resource_name = "ParadoBaixo"
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -372,10 +486,10 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2i(3, 0)]
+"values": [Vector2i(3, 0), Vector2i(3, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -392,6 +506,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_nilff"]
 resource_name = "ParadoCima"
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -400,10 +515,10 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2i(1, 0)]
+"values": [Vector2i(1, 0), Vector2i(1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -420,6 +535,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_0ydeo"]
 resource_name = "ParadoDireita"
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -428,10 +544,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [2]
+"values": [2, 2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -448,6 +564,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_t7dvs"]
 resource_name = "ParadoEsquerda"
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -456,10 +573,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [2]
+"values": [2, 2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -538,23 +655,23 @@ _data = {
 animation = &"AndandoDireita"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kj53a"]
-animation = &"AndandoCima"
+animation = &"AndandoBaixo"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4awtq"]
-animation = &"AndandoBaixo"
+animation = &"AndandoCima"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iyf3f"]
 animation = &"AndandoEsquerda"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_bdqed"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_gylvb")
-blend_point_0/pos = Vector2(0.9, 0)
+blend_point_0/pos = Vector2(1, 0)
 blend_point_1/node = SubResource("AnimationNodeAnimation_kj53a")
 blend_point_1/pos = Vector2(0, 0.9)
 blend_point_2/node = SubResource("AnimationNodeAnimation_4awtq")
 blend_point_2/pos = Vector2(0, -0.9)
 blend_point_3/node = SubResource("AnimationNodeAnimation_iyf3f")
-blend_point_3/pos = Vector2(-0.9, 0)
+blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_a5q54"]
@@ -562,13 +679,13 @@ blend_mode = 1
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_8blqj"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nnlxf"]
-animation = &"Golpe1Cima"
+animation = &"Golpe1Baixo"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3nuga"]
 animation = &"Golpe1Esquerda"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tpgq8"]
-animation = &"Golpe1Baixo"
+animation = &"Golpe1Cima"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ov5g"]
 animation = &"Golpe1Direita"
@@ -577,21 +694,21 @@ animation = &"Golpe1Direita"
 blend_point_0/node = SubResource("AnimationNodeAnimation_nnlxf")
 blend_point_0/pos = Vector2(0, 0.9)
 blend_point_1/node = SubResource("AnimationNodeAnimation_3nuga")
-blend_point_1/pos = Vector2(-0.9, 0)
+blend_point_1/pos = Vector2(-1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_tpgq8")
 blend_point_2/pos = Vector2(0, -0.9)
 blend_point_3/node = SubResource("AnimationNodeAnimation_5ov5g")
-blend_point_3/pos = Vector2(0.9, 0)
+blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_acif7"]
-animation = &"Golpe2Cima"
+animation = &"Golpe2Baixo"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0lsv4"]
 animation = &"Golpe2Direita"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m7u26"]
-animation = &"Golpe2Baixo"
+animation = &"Golpe2Cima"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r5r02"]
 animation = &"Golpe2Esquerda"
@@ -600,20 +717,20 @@ animation = &"Golpe2Esquerda"
 blend_point_0/node = SubResource("AnimationNodeAnimation_acif7")
 blend_point_0/pos = Vector2(0, 0.9)
 blend_point_1/node = SubResource("AnimationNodeAnimation_0lsv4")
-blend_point_1/pos = Vector2(0.9, 0)
+blend_point_1/pos = Vector2(1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_m7u26")
 blend_point_2/pos = Vector2(0, -0.9)
 blend_point_3/node = SubResource("AnimationNodeAnimation_r5r02")
-blend_point_3/pos = Vector2(-0.9, 0)
+blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ic502"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ddpt5"]
-animation = &"ParadoCima"
+animation = &"ParadoBaixo"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vrx3s"]
-animation = &"ParadoBaixo"
+animation = &"ParadoCima"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3ih73"]
 animation = &"ParadoDireita"
@@ -627,13 +744,13 @@ blend_point_0/pos = Vector2(0, 0.9)
 blend_point_1/node = SubResource("AnimationNodeAnimation_vrx3s")
 blend_point_1/pos = Vector2(0, -0.9)
 blend_point_2/node = SubResource("AnimationNodeAnimation_3ih73")
-blend_point_2/pos = Vector2(0.9, 0)
+blend_point_2/pos = Vector2(1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_s8wwy")
-blend_point_3/pos = Vector2(-0.9, 0)
+blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c3qvt"]
-graph_offset = Vector2(-256.82, -36.9064)
+graph_offset = Vector2(-447.4, 258.589)
 nodes/Andando/node = SubResource("AnimationNodeBlendSpace2D_bdqed")
 nodes/Andando/position = Vector2(-53.3333, 160)
 nodes/Atacando/node = SubResource("AnimationNodeOneShot_a5q54")
@@ -865,12 +982,13 @@ parameters/Atacando/request = 0
 "parameters/AtacandoOutroBraço/active" = false
 "parameters/AtacandoOutroBraço/internal_active" = false
 "parameters/AtacandoOutroBraço/request" = 0
-parameters/Golpe1/blend_position = Vector2(0.932715, 0.0174419)
+parameters/Golpe1/blend_position = Vector2(-0.000983298, 0.97541)
 parameters/Golpe2/blend_position = Vector2(0, 0)
 parameters/Movimentando/active = false
 parameters/Movimentando/internal_active = false
 parameters/Movimentando/request = 0
-parameters/Parado/blend_position = Vector2(0.651972, 0.226744)
+parameters/Parado/blend_position = Vector2(0.896, 0.0393014)
+script = ExtResource("4_776p5")
 
 [node name="Monstro" type="CharacterBody2D" parent="."]
 position = Vector2(523, 68)
