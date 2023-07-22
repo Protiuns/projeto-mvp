@@ -219,3 +219,5 @@ emission_sphere_radius = 3.0
 gravity = Vector2(0, -30)
 color = Color(1, 0.513726, 0.290196, 1)
 color_ramp = SubResource("Gradient_q5an1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
