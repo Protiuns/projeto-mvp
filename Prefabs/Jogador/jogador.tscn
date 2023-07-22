@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b6spunkmdm5tb"]
+[gd_scene load_steps=48 format=3 uid="uid://b6spunkmdm5tb"]
 
 [ext_resource type="Script" path="res://Scripts/Jogador/Jogador.gd" id="1_vees7"]
 [ext_resource type="Script" path="res://Scripts/Jogador/JocadorStates.gd" id="2_ectm6"]
@@ -765,21 +765,6 @@ nodes/Parado/position = Vector2(-53.3333, 0)
 nodes/output/position = Vector2(640, 0)
 node_connections = [&"output", 0, &"Atacando", &"Atacando", 0, &"Movimentando", &"Atacando", 1, &"AtacandoOutroBraço", &"AtacandoOutroBraço", 0, &"Golpe1", &"AtacandoOutroBraço", 1, &"Golpe2", &"Movimentando", 0, &"Parado", &"Movimentando", 1, &"Andando"]
 
-[sub_resource type="Curve" id="Curve_owq82"]
-min_value = -360.0
-max_value = 360.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.361446, 117.474), 0.0, 0.0, 0, 0, Vector2(0.843373, -200.842), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="Gradient" id="Gradient_d6o2k"]
-offsets = PackedFloat32Array(0.153646, 0.494792, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.971354, 0.971354, 0.971354, 1, 1, 1, 1, 1)
-
-[sub_resource type="Gradient" id="Gradient_nfst3"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0.145833, 0.346354, 0.46875, 0.846354)
-colors = PackedColorArray(0, 0, 0, 1, 0.336607, 0.336608, 0.336608, 1, -0.023504, -0.023504, -0.023504, 1, 1, 1, 1, 1)
-
 [node name="Jogador" type="CharacterBody2D"]
 position = Vector2(299, 165)
 script = ExtResource("1_vees7")
@@ -823,16 +808,3 @@ parameters/Movimentando/internal_active = false
 parameters/Movimentando/request = 0
 parameters/Parado/blend_position = Vector2(0.896, 0.0393014)
 script = ExtResource("4_stm8q")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(0, 3)
-amount = 7
-emission_shape = 2
-emission_sphere_radius = 3.0
-gravity = Vector2(-10, 0)
-angular_velocity_min = -6.7
-angular_velocity_max = 281.3
-angular_velocity_curve = SubResource("Curve_owq82")
-color = Color(0.380392, 1, 1, 1)
-color_ramp = SubResource("Gradient_d6o2k")
-color_initial_ramp = SubResource("Gradient_nfst3")
