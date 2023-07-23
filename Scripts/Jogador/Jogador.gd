@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var velocidade = 80
+var velocidade = 50
 var vetorEntrada = Vector2.ZERO
 var botaoAtaque = false
 var seMachucou = false
@@ -11,15 +11,16 @@ func  _physics_process(delta):
 	Entradas()
 	match maquinaEstados.estado:
 		maquinaEstados.estados.Parado:
+			AtualizarVelocidade()
 			OrientarDirecao()
 			PodeMachucar()
 		maquinaEstados.estados.Andando:
 			AtualizarVelocidade()
 			OrientarDirecao()
 			move_and_slide()
-		maquinaEstados.estados.Golpe1:
-			PodeMachucar()
-		maquinaEstados.estados.Golpe2:
+		maquinaEstados.estados.Atacando:
+			AtualizarVelocidade()
+			OrientarDirecao()
 			PodeMachucar()
 		maquinaEstados.estados.Machucado:
 			AtualizarVelocidade()
@@ -34,14 +35,15 @@ func Entradas():
 	var vertical = int(Input.is_action_pressed("Baixo")) - int(Input.is_action_pressed("Cima"))
 	var horizontal = int(Input.is_action_pressed("Direita")) - int(Input.is_action_pressed("Esquerda"))
 	vetorEntrada = Vector2(horizontal , vertical).normalized()
-	botaoAtaque = Input.is_action_just_pressed("Ataque")
+	botaoAtaque = Input.is_action_pressed("Ataque")
 	
 func AtualizarVelocidade():
-	velocity = vetorEntrada * velocidade
+	velocity = Vector2(int(vetorEntrada.x * velocidade),int(vetorEntrada.y * velocidade))
 	
 func OrientarDirecao():
-	if velocity.length()!= 0 :
+	if velocity != Vector2.ZERO :
 		direcao = velocity.normalized()
-		
+	elif vetorEntrada != Vector2.ZERO:
+		direcao = vetorEntrada
 func PodeMachucar():
 	pass

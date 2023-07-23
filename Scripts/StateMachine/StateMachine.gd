@@ -13,6 +13,7 @@ func _physics_process(delta):
 		var transicao = _EstadoTranzicao(delta)
 		if (transicao != null):
 			set_estado(transicao)
+	_LogicaDepoisTransicoes (delta)
 			
 
 func _EstadoLogica (delta):
@@ -23,7 +24,9 @@ func _EstadoEntrar(novoEstado , antigoEstado):
 	pass
 func _EstadoSair(antigoEstado, novoEstado):
 	pass
-
+func _LogicaDepoisTransicoes (delta):
+	pass
+	
 func set_estado(novoEstado):
 	estadoAntigo = estado
 	estado = novoEstado
@@ -34,4 +37,5 @@ func set_estado(novoEstado):
 
 func EstadoAdicionar(NomeEstado):
 	estados[NomeEstado] = estados.size()
+
 	
