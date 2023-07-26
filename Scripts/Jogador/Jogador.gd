@@ -20,7 +20,7 @@ func  _physics_process(delta):
 			move_and_slide()
 		maquinaEstados.estados.Atacando:
 			AtualizarVelocidade()
-			OrientarDirecao()
+			
 			PodeMachucar()
 		maquinaEstados.estados.Machucado:
 			AtualizarVelocidade()
