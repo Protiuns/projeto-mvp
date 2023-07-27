@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp6nt4gk7l1iw"]
+
+[ext_resource type="Script" path="res://Scripts/Monstros/monstro_caçar.gd" id="1_2qfv2"]
+
+[sub_resource type="Animation" id="Animation_f6p2q"]
+resource_name = "Atacando"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxo7w"]
+_data = {
+"Atacando": SubResource("Animation_f6p2q")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dg1xk"]
+radius = 4.12311
+
+[node name="MonstroCaçar" type="CharacterBody2D"]
+script = ExtResource("1_2qfv2")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-3.05882, 1.89474)
+scale = Vector2(1.23529, 0.789474)
+color = Color(1, 0.109804, 0.286275, 1)
+polygon = PackedVector2Array(-0.761902, 9, -0.761902, 3, 0.857147, -1, -0.761902, -5, 0.0476379, -9, 2.4762, -10, 4.90475, -9, 5.71429, -5, 4.09525, -1, 5.71429, 3, 5.71429, 9)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bxo7w")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.42)
+shape = SubResource("CircleShape2D_dg1xk")
+
+[node name="Node2D" type="Marker2D" parent="."]
+position = Vector2(-19, -7)
