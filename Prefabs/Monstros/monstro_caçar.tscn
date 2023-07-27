@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp6nt4gk7l1iw"]
+[gd_scene load_steps=6 format=3 uid="uid://dp6nt4gk7l1iw"]
 
 [ext_resource type="Script" path="res://Scripts/Monstros/monstro_caçar.gd" id="1_2qfv2"]
+[ext_resource type="Script" path="res://addons/behavior_tree/bt_editor_plugin.gd" id="2_tuxqo"]
 
 [sub_resource type="Animation" id="Animation_f6p2q"]
 resource_name = "Atacando"
@@ -33,3 +34,6 @@ shape = SubResource("CircleShape2D_dg1xk")
 
 [node name="Node2D" type="Marker2D" parent="."]
 position = Vector2(-19, -7)
+
+[node name="BTEditorPlugin" type="EditorPlugin" parent="."]
+script = ExtResource("2_tuxqo")

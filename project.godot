@@ -23,6 +23,10 @@ window/stretch/mode="viewport"
 window/stretch/scale=2.0
 window/vsync/vsync_mode=0
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/behavior_tree/plugin.cfg")
+
 [input]
 
 Cima={
