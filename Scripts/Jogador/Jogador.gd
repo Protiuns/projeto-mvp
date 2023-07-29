@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var velocidade = 50
+var velocidade = 100
 var vetorEntrada = Vector2.ZERO
 var botaoAtaque = false
 var seMachucou = false

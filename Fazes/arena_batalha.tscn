@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwfymfopthuo5"]
+[gd_scene load_steps=8 format=3 uid="uid://dwfymfopthuo5"]
 
 [ext_resource type="Texture2D" uid="uid://4y8stctxy2hs" path="res://Imagens/Assets/TilesTemporários.png" id="1_4xnuh"]
 [ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Prefabs/Jogador/jogador.tscn" id="1_p7jko"]
 [ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Prefabs/Camera/controle_de_camera.tscn" id="2_esors"]
+[ext_resource type="PackedScene" uid="uid://dpmxfedy3ogbo" path="res://Prefabs/Aparencia/modificador_de_tela.tscn" id="3_xto6l"]
 [ext_resource type="PackedScene" uid="uid://dp6nt4gk7l1iw" path="res://Prefabs/Monstros/monstro_caçar.tscn" id="4_7n4ji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lrfj"]
@@ -112,6 +113,8 @@ position = Vector2(96, 83)
 
 [node name="Controle de Camera" parent="." node_paths=PackedStringArray("Alvo") instance=ExtResource("2_esors")]
 Alvo = NodePath("../Jogador")
+
+[node name="Modificador de tela" parent="Controle de Camera" instance=ExtResource("3_xto6l")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rigka")

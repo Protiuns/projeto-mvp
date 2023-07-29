@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://yclqja7ljk82"]
+
+[ext_resource type="Material" uid="uid://dt0gjlj2dnqxn" path="res://Materiais/grama_Matetial.tres" id="1_3ujjy"]
+[ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Prefabs/Camera/controle_de_camera.tscn" id="1_bxqx8"]
+[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Prefabs/Jogador/jogador.tscn" id="2_nnnim"]
+
+[sub_resource type="Gradient" id="Gradient_t0x5s"]
+offsets = PackedFloat32Array(0.0844156, 0.214286, 0.772727, 0.928571)
+colors = PackedColorArray(0, 0, 0, 1, 0.0519481, 0.0519481, 0.0519481, 1, 0.604211, 0.604211, 0.604211, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_685ye"]
+seed = 185
+frequency = 0.0001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t65hw"]
+color_ramp = SubResource("Gradient_t0x5s")
+noise = SubResource("FastNoiseLite_685ye")
+
+[node name="TesteGramado" type="Node2D"]
+
+[node name="Controle de Camera" parent="." node_paths=PackedStringArray("Alvo") instance=ExtResource("1_bxqx8")]
+Alvo = NodePath("../Jogador")
+
+[node name="Jogador" parent="." instance=ExtResource("2_nnnim")]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_filter = 4
+material = ExtResource("1_3ujjy")
+position = Vector2(-3.7733, -32)
+scale = Vector2(1.27708, 1)
+texture = SubResource("NoiseTexture2D_t65hw")
+polygon = PackedVector2Array(-73, 62, -41, -35, 721, -3, 713, 419, 696, 520, -37, 518, -60, 412)

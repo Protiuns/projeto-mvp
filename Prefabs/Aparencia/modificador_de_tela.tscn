@@ -1,0 +1,60 @@
+[gd_scene load_steps=13 format=3 uid="uid://dpmxfedy3ogbo"]
+
+[ext_resource type="Shader" path="res://Materiais/Shaiders/TelaMudante.gdshader" id="1_ehexh"]
+
+[sub_resource type="Gradient" id="Gradient_wcmvi"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xigc0"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_illgc"]
+width = 500
+height = 500
+seamless = true
+seamless_blend_skirt = 0.5
+color_ramp = SubResource("Gradient_wcmvi")
+noise = SubResource("FastNoiseLite_xigc0")
+
+[sub_resource type="Gradient" id="Gradient_457yj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cg8r4"]
+noise_type = 3
+frequency = 0.0335
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_62qjx"]
+width = 500
+height = 500
+seamless = true
+color_ramp = SubResource("Gradient_457yj")
+noise = SubResource("FastNoiseLite_cg8r4")
+
+[sub_resource type="Gradient" id="Gradient_qlnk1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vl0bi"]
+noise_type = 3
+frequency = 0.0075
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uhvfj"]
+width = 500
+height = 500
+seamless = true
+color_ramp = SubResource("Gradient_qlnk1")
+noise = SubResource("FastNoiseLite_vl0bi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ljk40"]
+shader = ExtResource("1_ehexh")
+shader_parameter/scroll = Vector2(-0.2, 0.2)
+shader_parameter/distorcao_cores = 0.0580001
+shader_parameter/noise_r = SubResource("NoiseTexture2D_uhvfj")
+shader_parameter/noise_g = SubResource("NoiseTexture2D_62qjx")
+shader_parameter/noise_b = SubResource("NoiseTexture2D_illgc")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kbpks"]
+width = 2000
+height = 2000
+
+[node name="Modificador de tela" type="Sprite2D"]
+z_index = 6
+material = SubResource("ShaderMaterial_ljk40")
+texture = SubResource("NoiseTexture2D_kbpks")

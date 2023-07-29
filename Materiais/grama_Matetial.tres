@@ -1,0 +1,58 @@
+[gd_resource type="ShaderMaterial" load_steps=11 format=3 uid="uid://dt0gjlj2dnqxn"]
+
+[ext_resource type="Shader" path="res://Materiais/Shaiders/grama.gdshader" id="1_6k215"]
+
+[sub_resource type="Gradient" id="Gradient_p6cap"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l34ec"]
+noise_type = 2
+seed = 2
+frequency = 0.0126
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0v5ha"]
+width = 64
+height = 64
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_p6cap")
+noise = SubResource("FastNoiseLite_l34ec")
+
+[sub_resource type="Gradient" id="Gradient_t4bth"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q0wxf"]
+noise_type = 2
+seed = 1
+frequency = 0.0126
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_43rhn"]
+width = 64
+height = 64
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_t4bth")
+noise = SubResource("FastNoiseLite_q0wxf")
+
+[sub_resource type="Gradient" id="Gradient_dbu20"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7ov08"]
+noise_type = 2
+seed = 1
+frequency = 0.0126
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i63n3"]
+width = 64
+height = 64
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_dbu20")
+noise = SubResource("FastNoiseLite_7ov08")
+
+[resource]
+shader = ExtResource("1_6k215")
+shader_parameter/scroll = Vector2(-0.015, 0.01)
+shader_parameter/distorcao_cores = -0.185
+shader_parameter/noise_r = SubResource("NoiseTexture2D_i63n3")
+shader_parameter/noise_g = SubResource("NoiseTexture2D_43rhn")
+shader_parameter/noise_b = SubResource("NoiseTexture2D_0v5ha")
