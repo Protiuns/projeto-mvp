@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dv0p132j3rofn"]
+[gd_scene load_steps=17 format=3 uid="uid://dv0p132j3rofn"]
 
 [ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Prefabs/Jogador/jogador.tscn" id="1_u57jb"]
 [ext_resource type="Texture2D" uid="uid://4y8stctxy2hs" path="res://Imagens/Assets/TilesTemporários.png" id="2_2v5ei"]
@@ -45,30 +45,42 @@ sources/0 = SubResource("TileSetAtlasSource_y3bwo")
 offsets = PackedFloat32Array(0.108696, 0.880435)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_dq6bo"]
-noise_type = 3
-frequency = 0.006
+noise_type = 4
+frequency = 0.3518
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k2aj6"]
 width = 500
 height = 500
 seamless = true
-seamless_blend_skirt = 0.444
+seamless_blend_skirt = 0.523
 color_ramp = SubResource("Gradient_86sn6")
 noise = SubResource("FastNoiseLite_dq6bo")
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kxt21"]
+[sub_resource type="Gradient" id="Gradient_jga6q"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xu8bd"]
+noise_type = 3
+frequency = 0.2952
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cpshr"]
+width = 500
+height = 500
 seamless = true
+seamless_blend_skirt = 0.44
+color_ramp = SubResource("Gradient_jga6q")
+noise = SubResource("FastNoiseLite_xu8bd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7bgw"]
 shader = ExtResource("3_p8xi3")
-shader_parameter/scroll = Vector2(0.05, 0.05)
-shader_parameter/scroll2 = Vector2(0.05, 0.05)
-shader_parameter/velocidade = 0.2
+shader_parameter/scroll = Vector2(0.002, 0.003)
+shader_parameter/scroll2 = Vector2(-0.003, 0.002)
 shader_parameter/distorcao_tela = 0.2
-shader_parameter/cor_agua = Color(0.317647, 0.662745, 0.815686, 1)
-shader_parameter/cor_topo = null
+shader_parameter/cor_agua = Color(0.137255, 0.564706, 0.619608, 1)
+shader_parameter/cor_topo = Color(0.592157, 0.968627, 0.952941, 0.835294)
+shader_parameter/comeco_luz = 0.35
+shader_parameter/fim_luz = 0.409
 shader_parameter/noise = SubResource("NoiseTexture2D_k2aj6")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_kxt21")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_cpshr")
 
 [sub_resource type="Gradient" id="Gradient_fys38"]
 interpolation_mode = 2
