@@ -168,6 +168,5 @@ Alvo = NodePath("../Jogador")
 material = SubResource("ShaderMaterial_5bu8o")
 script = ExtResource("6_t8574")
 
-[node name="MonstroCaçar" parent="." node_paths=PackedStringArray("alvo") instance=ExtResource("4_7n4ji")]
+[node name="MonstroCaçar" parent="." instance=ExtResource("4_7n4ji")]
 position = Vector2(206, 53)
-alvo = NodePath("../Jogador")
