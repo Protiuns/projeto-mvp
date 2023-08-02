@@ -1,12 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwfymfopthuo5"]
+[gd_scene load_steps=8 format=3 uid="uid://dwfymfopthuo5"]
 
 [ext_resource type="Texture2D" uid="uid://4y8stctxy2hs" path="res://Imagens/Assets/TilesTemporários.png" id="1_4xnuh"]
 [ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Prefabs/Jogador/jogador.tscn" id="1_p7jko"]
 [ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Prefabs/Camera/controle_de_camera.tscn" id="2_esors"]
-[ext_resource type="PackedScene" uid="uid://dpmxfedy3ogbo" path="res://Prefabs/Aparencia/modificador_de_tela.tscn" id="3_xto6l"]
 [ext_resource type="PackedScene" uid="uid://dp6nt4gk7l1iw" path="res://Prefabs/Monstros/monstro_caçar.tscn" id="4_7n4ji"]
-[ext_resource type="Shader" path="res://Materiais/Shaiders/TelaMudante.gdshader" id="5_p0wi8"]
-[ext_resource type="Script" path="res://Prefabs/Aparencia/modificador_de_tela.gd" id="6_t8574"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_orqsh"]
 
@@ -110,46 +107,6 @@ texture = ExtResource("1_4xnuh")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5lrfj")
 
-[sub_resource type="Gradient" id="Gradient_w4dne"]
-offsets = PackedFloat32Array(0, 0.124514, 0.891051, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.361089, 0.361089, 0.361089, 1, 0.564202, 0.564202, 0.564202, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_3d3es"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_42n3s"]
-color_ramp = SubResource("Gradient_w4dne")
-noise = SubResource("FastNoiseLite_3d3es")
-
-[sub_resource type="Gradient" id="Gradient_twfh8"]
-offsets = PackedFloat32Array(0, 0.124514, 0.891051, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.361089, 0.361089, 0.361089, 1, 0.564202, 0.564202, 0.564202, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jn2vi"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oi15m"]
-color_ramp = SubResource("Gradient_twfh8")
-noise = SubResource("FastNoiseLite_jn2vi")
-
-[sub_resource type="Gradient" id="Gradient_jkhpr"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_l0di5"]
-noise_type = 2
-frequency = 0.1975
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1b4cy"]
-width = 2000
-height = 2000
-color_ramp = SubResource("Gradient_jkhpr")
-noise = SubResource("FastNoiseLite_l0di5")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5bu8o"]
-shader = ExtResource("5_p0wi8")
-shader_parameter/scroll = Vector2(0.05, 0.05)
-shader_parameter/distorcao_cores = -0.102
-shader_parameter/noise_r = SubResource("NoiseTexture2D_1b4cy")
-shader_parameter/noise_g = SubResource("NoiseTexture2D_oi15m")
-shader_parameter/noise_b = SubResource("NoiseTexture2D_42n3s")
-
 [node name="ArenaBatalha" type="Node2D"]
 
 [node name="Jogador" parent="." instance=ExtResource("1_p7jko")]
@@ -163,10 +120,10 @@ layer_0/tile_data = PackedInt32Array(0, 327680, 2, 1, 327680, 2, 2, 327680, 2, 3
 
 [node name="Controle de Camera" parent="." node_paths=PackedStringArray("Alvo") instance=ExtResource("2_esors")]
 Alvo = NodePath("../Jogador")
+CametraDestino_segundos = 0.8
 
-[node name="Modificador de tela" parent="Controle de Camera" instance=ExtResource("3_xto6l")]
-material = SubResource("ShaderMaterial_5bu8o")
-script = ExtResource("6_t8574")
-
-[node name="MonstroCaçar" parent="." instance=ExtResource("4_7n4ji")]
+[node name="MonstroCaçar" parent="." node_paths=PackedStringArray("Destino") instance=ExtResource("4_7n4ji")]
 position = Vector2(206, 53)
+motion_mode = 1
+Velocidade = 15.0
+Destino = NodePath("../Jogador")

@@ -1,13 +1,19 @@
 extends Node
-class_name VidaComp
+class_name Vida_comp
 
 @export var vidaMaxima := 10.0
-var vida: float
+var vida = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	vida= vidaMaxima
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func dano():
-	pass
+func Dano(danoTomado:float):
+	
+	vida -= danoTomado
+	if (vida <= 0): 
+		Morrer()
+
+func  Morrer():
+	get_parent().queue_free()
+	
