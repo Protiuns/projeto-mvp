@@ -1,4 +1,4 @@
-extends "res://Scripts/StateMachine/StateMachine.gd"
+extends "res://Comportamento/StateMachine/Scripts/StateMachine.gd"
 
 
 @onready var jogador = $".."

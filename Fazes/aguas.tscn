@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://dv0p132j3rofn"]
 
-[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Prefabs/Jogador/jogador.tscn" id="1_u57jb"]
+[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Jogador/Prefabs/jogador.tscn" id="1_u57jb"]
 [ext_resource type="Texture2D" uid="uid://4y8stctxy2hs" path="res://Imagens/Assets/TilesTemporários.png" id="2_2v5ei"]
 [ext_resource type="Shader" path="res://Materiais/Shaiders/aguas.gdshader" id="3_p8xi3"]
-[ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Prefabs/Camera/controle_de_camera.tscn" id="3_xpkvl"]
+[ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Componentes/Camera/controle_de_camera.tscn" id="3_xpkvl"]
 
 [sub_resource type="Gradient" id="Gradient_x8eko"]
 offsets = PackedFloat32Array(0.0242215, 0.121107, 0.522491, 0.67128, 0.83391, 1)

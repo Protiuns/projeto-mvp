@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dwfymfopthuo5"]
 
 [ext_resource type="Texture2D" uid="uid://4y8stctxy2hs" path="res://Imagens/Assets/TilesTemporários.png" id="1_4xnuh"]
-[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Prefabs/Jogador/jogador.tscn" id="1_p7jko"]
-[ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Prefabs/Camera/controle_de_camera.tscn" id="2_esors"]
-[ext_resource type="PackedScene" uid="uid://dp6nt4gk7l1iw" path="res://Prefabs/Monstros/monstro_caçar.tscn" id="4_7n4ji"]
+[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Jogador/Prefabs/jogador.tscn" id="1_p7jko"]
+[ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Componentes/Camera/controle_de_camera.tscn" id="2_esors"]
+[ext_resource type="PackedScene" uid="uid://dp6nt4gk7l1iw" path="res://Monstros/monstro_caçar.tscn" id="4_7n4ji"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_orqsh"]
 

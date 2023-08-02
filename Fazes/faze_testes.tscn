@@ -1,11 +1,11 @@
 [gd_scene load_steps=18 format=3 uid="uid://ctu5ey1eif03q"]
 
-[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Prefabs/Jogador/jogador.tscn" id="1_al2ve"]
-[ext_resource type="Script" path="res://Scripts/Monstros/Monstro.gd" id="3_hr1e3"]
+[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Jogador/Prefabs/jogador.tscn" id="1_al2ve"]
+[ext_resource type="Script" path="res://Monstros/ScriptsGerais/Monstro.gd" id="2_w5fgs"]
 [ext_resource type="Script" path="res://Fazes/MonstoStates.gd" id="4_ipdyw"]
 [ext_resource type="Texture2D" uid="uid://4y8stctxy2hs" path="res://Imagens/Assets/TilesTemporários.png" id="4_lmfs6"]
-[ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Prefabs/Camera/controle_de_camera.tscn" id="5_s8jmi"]
-[ext_resource type="PackedScene" uid="uid://dpmxfedy3ogbo" path="res://Prefabs/Aparencia/modificador_de_tela.tscn" id="6_nr1bn"]
+[ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Componentes/Camera/controle_de_camera.tscn" id="5_s8jmi"]
+[ext_resource type="PackedScene" uid="uid://dpmxfedy3ogbo" path="res://Componentes/Aparencia/modificador_de_tela.tscn" id="6_nr1bn"]
 
 [sub_resource type="Animation" id="Animation_f4178"]
 resource_name = "Andando"
@@ -296,7 +296,7 @@ position = Vector2(93, 109)
 
 [node name="Monstro" type="CharacterBody2D" parent="."]
 position = Vector2(523, 68)
-script = ExtResource("3_hr1e3")
+script = ExtResource("2_w5fgs")
 metadata/_edit_group_ = true
 
 [node name="MonstoStates" type="Node" parent="Monstro"]
