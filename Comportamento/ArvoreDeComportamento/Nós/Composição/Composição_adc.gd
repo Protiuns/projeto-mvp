@@ -1,7 +1,7 @@
 @icon("../../Icones/category_composite.svg")
 extends ArvoreDeComportamentos
 
-class_name Composicao
+class_name Composicao_adc
 
 
 func _ready():

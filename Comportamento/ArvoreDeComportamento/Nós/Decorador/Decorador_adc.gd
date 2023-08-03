@@ -1,7 +1,7 @@
 @icon("../../Icones/category_decorator.svg")
 extends ArvoreDeComportamentos
 
-class_name Decorador
+class_name Decorador_adc
 # 
 func _ready():
 	if self.get_child_count() != 1:

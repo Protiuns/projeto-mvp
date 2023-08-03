@@ -1,7 +1,7 @@
 @icon("../../Icones/selector.svg")
-extends Composicao
+extends Composicao_adc
 
-class_name SeletorComposicao
+class_name SeletorComposicao_adc
 
 func Rodar(ator , quadro):
 	for c in get_children():

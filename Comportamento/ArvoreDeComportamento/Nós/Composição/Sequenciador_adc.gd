@@ -1,8 +1,8 @@
 @icon("../../Icones/sequencer.svg")
-extends Composicao
+extends Composicao_adc
 
 
-class_name SequenciadorComposicao
+class_name SequenciadorComposicao_adc
 
 func Rodar(ator , quadro):
 	for c in get_children():
