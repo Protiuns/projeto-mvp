@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=11 format=3 uid="uid://dt0gjlj2dnqxn"]
 
-[ext_resource type="Shader" path="res://Materiais/Shaiders/grama.gdshader" id="1_6k215"]
+[ext_resource type="Shader" path="res://Recursos/Materiais/Shaiders/grama.gdshader" id="1_6k215"]
 
 [sub_resource type="Gradient" id="Gradient_p6cap"]
 

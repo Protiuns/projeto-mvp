@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6nje2x404588"
-path="res://.godot/imported/Itch release tileset base 01.png-5edea9c75642de5b18be0923e1bba80b.ctex"
+uid="uid://dlhjbje0qvg3"
+path="res://.godot/imported/sequencer.svg-e8366013eed0c59119f4890b7e82144c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/TiledsetReferencia/Itch release tileset base 01.png"
-dest_files=["res://.godot/imported/Itch release tileset base 01.png-5edea9c75642de5b18be0923e1bba80b.ctex"]
+source_file="res://Comportamento/ArvoreDeComportamento/Icones/sequencer.svg"
+dest_files=["res://.godot/imported/sequencer.svg-e8366013eed0c59119f4890b7e82144c.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

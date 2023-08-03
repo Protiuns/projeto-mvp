@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="Projeto-mvp"
-run/main_scene="res://Fazes/faze_testes.tscn"
+run/main_scene="res://Fazes/aguas.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 

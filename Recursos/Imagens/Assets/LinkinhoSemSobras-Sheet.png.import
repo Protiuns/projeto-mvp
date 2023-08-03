@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4y8stctxy2hs"
-path="res://.godot/imported/TilesTemporários.png-202e167f323e83a343f93e56647e1fa0.ctex"
+uid="uid://brifeqmx5d3td"
+path="res://.godot/imported/LinkinhoSemSobras-Sheet.png-5bcd4bd7ee96cc0829fbb2284eba4bbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/Assets/TilesTemporários.png"
-dest_files=["res://.godot/imported/TilesTemporários.png-202e167f323e83a343f93e56647e1fa0.ctex"]
+source_file="res://Recursos/Imagens/Assets/LinkinhoSemSobras-Sheet.png"
+dest_files=["res://.godot/imported/LinkinhoSemSobras-Sheet.png-5bcd4bd7ee96cc0829fbb2284eba4bbf.ctex"]
 
 [params]
 
@@ -25,10 +25,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

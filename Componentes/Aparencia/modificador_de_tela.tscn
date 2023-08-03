@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dpmxfedy3ogbo"]
 
-[ext_resource type="Shader" path="res://Materiais/Shaiders/TelaMudante.gdshader" id="1_ehexh"]
+[ext_resource type="Shader" path="res://Recursos/Materiais/Shaiders/TelaMudante.gdshader" id="1_ehexh"]
 
 [sub_resource type="Gradient" id="Gradient_wcmvi"]
 

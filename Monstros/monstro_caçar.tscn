@@ -1,8 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dp6nt4gk7l1iw"]
+[gd_scene load_steps=7 format=3 uid="uid://dp6nt4gk7l1iw"]
 
 [ext_resource type="Script" path="res://Componentes/Movimentação/ControleMovimentacao_comp.gd" id="1_lftc2"]
-[ext_resource type="Script" path="res://Comportamento/ControleAções/Scripts/ControleDeAções.gd" id="2_0yxhp"]
-[ext_resource type="PackedScene" uid="uid://ba5mh3jqpibib" path="res://Comportamento/ArvoreDeComportamento/arvore_de_comportamentos_raiz.tscn" id="3_xgy4d"]
 [ext_resource type="Script" path="res://Componentes/Vida/VidaComp.gd" id="5_7revs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dg1xk"]
@@ -32,11 +30,6 @@ position = Vector2(-3.05882, 1.89474)
 scale = Vector2(1.23529, 0.789474)
 color = Color(1, 0.109804, 0.286275, 1)
 polygon = PackedVector2Array(-0.761902, 9, -0.761902, 3, 0.857147, -1, -0.761902, -5, 0.0476379, -9, 2.4762, -10, 4.90475, -9, 5.71429, -5, 4.09525, -1, 5.71429, 3, 5.71429, 9)
-
-[node name="ControleDeAções" type="Node" parent="."]
-script = ExtResource("2_0yxhp")
-
-[node name="ArvoreDeComportamentosRaiz" parent="." instance=ExtResource("3_xgy4d")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba5mh3jqpibib"]
+[gd_scene load_steps=2 format=3 uid="uid://ba5mh3jqpibib"]
 
 [ext_resource type="Script" path="res://Comportamento/ArvoreDeComportamento/Scripts/ArvoreDeComportamentosRaiz.gd" id="1_eyxjk"]
-[ext_resource type="Script" path="res://Comportamento/ArvoreDeComportamento/Scripts/Tarefa.gd" id="2_mri6i"]
 
 [node name="ArvoreDeComportamentosRaiz" type="Node"]
 script = ExtResource("1_eyxjk")
-
-[node name="Tarefa" type="Node" parent="." node_paths=PackedStringArray("ArvoreComandos")]
-script = ExtResource("2_mri6i")
-ArvoreComandos = NodePath("")

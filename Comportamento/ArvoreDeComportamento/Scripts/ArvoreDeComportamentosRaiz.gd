@@ -1,6 +1,9 @@
+@icon("../Icones/arvore.svg")
 extends ArvoreDeComportamentos
 
-class_name ArvoreDeComportamentosRaiz
+
+class_name ArvoreDeComportamentosRaiz 
+
 
 const QuadroDeDados = preload("./QuadorDeDadosArvore.gd")
 @onready var quadro = QadroDeDadosArvore.new()
@@ -9,7 +12,7 @@ const QuadroDeDados = preload("./QuadorDeDadosArvore.gd")
 
 func _ready():
 	if self.get_child_count() != 1:
-		print("Arvore de Comportamentos error: Raiz deve ter apenas um no filho")
+		print("ArvoreComportamentos erro: Raiz deve ter apenas um nó filho")
 		Desativar()
 		return
 

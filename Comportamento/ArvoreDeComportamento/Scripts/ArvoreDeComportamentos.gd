@@ -1,3 +1,4 @@
+@icon("../Icones/arvore.svg")
 extends Node
 class_name ArvoreDeComportamentos
 enum  {Sucesso, Fracasso, Rodando}

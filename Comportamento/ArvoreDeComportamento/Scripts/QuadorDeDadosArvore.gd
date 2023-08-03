@@ -1,3 +1,4 @@
+@icon("../Icones/blackboard.svg")
 extends Node
 class_name QadroDeDadosArvore
 

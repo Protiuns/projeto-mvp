@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmab3ym6atdn6"
-path="res://.godot/imported/Itch release tileset example sprites 01 2x.png-77062dde3a81c66ccb5efb21cabb92c5.ctex"
+uid="uid://dlekfdgl8bapa"
+path="res://.godot/imported/action.svg-8bc1d6538de5e1cda8ee9c9ba24708fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/TiledsetReferencia/Itch release tileset example sprites 01 2x.png"
-dest_files=["res://.godot/imported/Itch release tileset example sprites 01 2x.png-77062dde3a81c66ccb5efb21cabb92c5.ctex"]
+source_file="res://Comportamento/ArvoreDeComportamento/Icones/action.svg"
+dest_files=["res://.godot/imported/action.svg-8bc1d6538de5e1cda8ee9c9ba24708fb.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

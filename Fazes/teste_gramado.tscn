@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://yclqja7ljk82"]
 
-[ext_resource type="Material" uid="uid://dt0gjlj2dnqxn" path="res://Materiais/grama_Matetial.tres" id="1_3ujjy"]
-[ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Prefabs/Camera/controle_de_camera.tscn" id="1_bxqx8"]
-[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Prefabs/Jogador/jogador.tscn" id="2_nnnim"]
+[ext_resource type="Material" uid="uid://dt0gjlj2dnqxn" path="res://Recursos/Materiais/grama_Matetial.tres" id="1_3ujjy"]
+[ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Componentes/Camera/controle_de_camera.tscn" id="1_bxqx8"]
+[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Jogador/Prefabs/jogador.tscn" id="2_nnnim"]
 
 [sub_resource type="Gradient" id="Gradient_t0x5s"]
 offsets = PackedFloat32Array(0.0844156, 0.214286, 0.772727, 0.928571)

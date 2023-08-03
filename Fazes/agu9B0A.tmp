@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0sq58i6wdswu"]
+[gd_scene load_steps=21 format=3 uid="uid://dv0p132j3rofn"]
 
 [ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Jogador/Prefabs/jogador.tscn" id="1_u57jb"]
-[ext_resource type="Texture2D" uid="uid://4y8stctxy2hs" path="res://Recursos/Imagens/Assets/TilesTemporários.png" id="2_m70wc"]
-[ext_resource type="Shader" path="res://Recursos/Materiais/Shaiders/aguas.gdshader" id="3_f6mrp"]
+[ext_resource type="Texture2D" uid="uid://4y8stctxy2hs" path="res://Imagens/Assets/TilesTemporários.png" id="2_2v5ei"]
+[ext_resource type="Shader" path="res://Materiais/Shaiders/aguas.gdshader" id="3_p8xi3"]
 [ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Componentes/Camera/controle_de_camera.tscn" id="3_xpkvl"]
 [ext_resource type="PackedScene" uid="uid://dp6nt4gk7l1iw" path="res://Monstros/monstro_caçar.tscn" id="5_650u3"]
 
@@ -22,7 +22,7 @@ color_ramp = SubResource("Gradient_x8eko")
 noise = SubResource("FastNoiseLite_dm6ox")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3bwo"]
-texture = ExtResource("2_m70wc")
+texture = ExtResource("2_2v5ei")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -87,7 +87,7 @@ color_ramp = SubResource("Gradient_jga6q")
 noise = SubResource("FastNoiseLite_xu8bd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7bgw"]
-shader = ExtResource("3_f6mrp")
+shader = ExtResource("3_p8xi3")
 shader_parameter/scroll = Vector2(0, 0.003)
 shader_parameter/scroll2 = Vector2(-0.003, 0.002)
 shader_parameter/distorcao_tela = 0.033
@@ -143,7 +143,4 @@ Alvo = NodePath("../Jogador")
 
 [node name="MonstroCaçar" parent="." node_paths=PackedStringArray("Destino") instance=ExtResource("5_650u3")]
 position = Vector2(161, 113)
-Velocidade = 10.0
-TempoAteVeloxidadeMax = 2.0
-TempoAteVeloxidadeMin = 2.0
 Destino = NodePath("../Jogador")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brifeqmx5d3td"
-path="res://.godot/imported/LinkinhoSemSobras-Sheet.png-95a6ca19434ad0018ee8dbbb44364282.ctex"
+uid="uid://msksd00rbt48"
+path="res://.godot/imported/limiter.svg-5c030cfa7e9383054199617d5a1ba405.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/Assets/LinkinhoSemSobras-Sheet.png"
-dest_files=["res://.godot/imported/LinkinhoSemSobras-Sheet.png-95a6ca19434ad0018ee8dbbb44364282.ctex"]
+source_file="res://Comportamento/ArvoreDeComportamento/Icones/limiter.svg"
+dest_files=["res://.godot/imported/limiter.svg-5c030cfa7e9383054199617d5a1ba405.ctex"]
 
 [params]
 
@@ -25,10 +25,13 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
