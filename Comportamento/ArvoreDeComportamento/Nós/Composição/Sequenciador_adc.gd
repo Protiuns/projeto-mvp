@@ -6,7 +6,7 @@ class_name SequenciadorComposicao_adc
 
 func Rodar(ator , quadro):
 	for c in get_children():
-		var resposta = c.tick(ator, quadro)
+		var resposta = c.Rodar(ator, quadro)
 
 		if resposta != Sucesso:
 			return resposta
