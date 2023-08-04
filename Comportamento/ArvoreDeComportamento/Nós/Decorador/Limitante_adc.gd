@@ -15,7 +15,7 @@ func Rodar(ator, quadro):
 		repeticao_atual = 0
 
 	if repeticao_atual <= max_repeticao:
-		quadro.set(chave, repeticao_atual + 1)
+		quadro.Definir(chave, repeticao_atual + 1)
 		return self.get_child(0).Rodar(ator, quadro)
 	else:
 		return Fracasso
