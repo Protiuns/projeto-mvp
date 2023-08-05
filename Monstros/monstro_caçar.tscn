@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dp6nt4gk7l1iw"]
+[gd_scene load_steps=11 format=3 uid="uid://dp6nt4gk7l1iw"]
 
 [ext_resource type="Script" path="res://Componentes/Movimentação/ControleMovimentacao_comp.gd" id="1_lftc2"]
 [ext_resource type="Script" path="res://Componentes/AnimationPlayers/AnimaComAtaque_comp.gd" id="2_sgq4c"]
 [ext_resource type="Script" path="res://Componentes/Vida/VidaComp.gd" id="2_ujhju"]
 [ext_resource type="Script" path="res://Componentes/AlvoDeAcerto/AlvoDeAcerto_comp.gd" id="3_7w8d8"]
 [ext_resource type="Script" path="res://Componentes/Ataque/Ataque_comp.gd" id="4_r8aug"]
+[ext_resource type="Script" path="res://Componentes/AreaDeDeteccao/AreaDeDeteccao_comp.gd" id="6_2cp22"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dg1xk"]
 radius = 4.12311
@@ -15,7 +16,10 @@ height = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_be7kf"]
 
-[node name="MonstroCaçar" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuuok"]
+size = Vector2(15, 6)
+
+[node name="AtacanteCanhoto" type="CharacterBody2D"]
 script = ExtResource("1_lftc2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -32,18 +36,33 @@ polygon = PackedVector2Array(-0.761902, 9, -0.761902, 3, 0.857147, -1, -0.761902
 script = ExtResource("2_ujhju")
 
 [node name="AlvoDeAcerto_comp" type="Area2D" parent="."]
+visible = false
 script = ExtResource("3_7w8d8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlvoDeAcerto_comp"]
 shape = SubResource("CapsuleShape2D_r6264")
 
 [node name="Esfaqueada" type="Area2D" parent="."]
+position = Vector2(-14, 0)
 script = ExtResource("4_r8aug")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esfaqueada"]
-position = Vector2(-15, 0)
 shape = SubResource("CircleShape2D_be7kf")
+
+[node name="Polygon2D" type="Polygon2D" parent="Esfaqueada"]
+visible = false
+color = Color(1, 0.270588, 0.337255, 1)
+polygon = PackedVector2Array(-7, -7, 0, -10, 8, -7, 10, 2, 7, 9, -1, 10, -8, 7, -11, 0)
 
 [node name="AnimaComAtaque_comp" type="AnimationPlayer" parent="." node_paths=PackedStringArray("Ataques")]
 script = ExtResource("2_sgq4c")
 Ataques = [NodePath("../Esfaqueada")]
+
+[node name="AreaDeDeteccao_comp" type="Area2D" parent="."]
+position = Vector2(-7, 0)
+script = ExtResource("6_2cp22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeDeteccao_comp"]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_nuuok")
