@@ -1,22 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp6nt4gk7l1iw"]
+[gd_scene load_steps=9 format=3 uid="uid://dp6nt4gk7l1iw"]
 
 [ext_resource type="Script" path="res://Componentes/Movimentação/ControleMovimentacao_comp.gd" id="1_lftc2"]
-[ext_resource type="Script" path="res://Componentes/Vida/VidaComp.gd" id="5_7revs"]
+[ext_resource type="Script" path="res://Componentes/AnimationPlayers/AnimaComAtaque_comp.gd" id="2_sgq4c"]
+[ext_resource type="Script" path="res://Componentes/Vida/VidaComp.gd" id="2_ujhju"]
+[ext_resource type="Script" path="res://Componentes/AlvoDeAcerto/AlvoDeAcerto_comp.gd" id="3_7w8d8"]
+[ext_resource type="Script" path="res://Componentes/Ataque/Ataque_comp.gd" id="4_r8aug"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dg1xk"]
 radius = 4.12311
 
-[sub_resource type="Animation" id="Animation_f6p2q"]
-resource_name = "Atacando"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxo7w"]
-_data = {
-"Atacando": SubResource("Animation_f6p2q")
-}
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atg5a"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r6264"]
 radius = 5.0
-height = 18.0
+height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_be7kf"]
 
 [node name="MonstroCaçar" type="CharacterBody2D"]
 script = ExtResource("1_lftc2")
@@ -31,15 +28,22 @@ scale = Vector2(1.23529, 0.789474)
 color = Color(1, 0.109804, 0.286275, 1)
 polygon = PackedVector2Array(-0.761902, 9, -0.761902, 3, 0.857147, -1, -0.761902, -5, 0.0476379, -9, 2.4762, -10, 4.90475, -9, 5.71429, -5, 4.09525, -1, 5.71429, 3, 5.71429, 9)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_bxo7w")
-}
+[node name="Vida_comp" type="Node" parent="."]
+script = ExtResource("2_ujhju")
 
-[node name="VidaComp" type="Node" parent="."]
-script = ExtResource("5_7revs")
+[node name="AlvoDeAcerto_comp" type="Area2D" parent="."]
+script = ExtResource("3_7w8d8")
 
-[node name="AlvoAcerto_Comp" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlvoDeAcerto_comp"]
+shape = SubResource("CapsuleShape2D_r6264")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AlvoAcerto_Comp"]
-shape = SubResource("CapsuleShape2D_atg5a")
+[node name="Esfaqueada" type="Area2D" parent="."]
+script = ExtResource("4_r8aug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Esfaqueada"]
+position = Vector2(-15, 0)
+shape = SubResource("CircleShape2D_be7kf")
+
+[node name="AnimaComAtaque_comp" type="AnimationPlayer" parent="." node_paths=PackedStringArray("Ataques")]
+script = ExtResource("2_sgq4c")
+Ataques = [NodePath("../Esfaqueada")]

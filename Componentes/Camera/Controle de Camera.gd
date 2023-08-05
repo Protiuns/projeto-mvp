@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name ControleDeCamera
+
 @export var DistanciaCameraMax = 35
 @export var Alvo  = Node2D
 @export var CametraDestino_segundos = 0.5
