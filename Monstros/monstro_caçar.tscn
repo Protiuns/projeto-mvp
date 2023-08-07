@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dp6nt4gk7l1iw"]
+[gd_scene load_steps=18 format=3 uid="uid://dp6nt4gk7l1iw"]
 
 [ext_resource type="Script" path="res://Componentes/Movimentação/ControleMovimentacao_comp.gd" id="1_lftc2"]
 [ext_resource type="Script" path="res://Componentes/AnimationPlayers/AnimaComAtaque_comp.gd" id="2_sgq4c"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Componentes/AlvoDeAcerto/AlvoDeAcerto_comp.gd" id="3_7w8d8"]
 [ext_resource type="Script" path="res://Componentes/Ataque/Ataque_comp.gd" id="4_r8aug"]
 [ext_resource type="Script" path="res://Componentes/AreaDeDeteccao/AreaDeDeteccao_comp.gd" id="6_2cp22"]
+[ext_resource type="Script" path="res://Comportamento/ArvoreDeComportamento/Scripts/ArvoreDeComportamentosRaiz.gd" id="7_upytp"]
+[ext_resource type="Script" path="res://Comportamento/ArvoreDeComportamento/Nós/Composição/Sequenciador_adc.gd" id="8_oxeol"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dg1xk"]
 radius = 4.12311
@@ -261,3 +263,9 @@ script = ExtResource("6_2cp22")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeDeteccao_comp"]
 position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_nuuok")
+
+[node name="ArvoreDeComportamentosRaiz" type="Node" parent="."]
+script = ExtResource("7_upytp")
+
+[node name="SequenciadorComposicao_adc" type="Node" parent="ArvoreDeComportamentosRaiz"]
+script = ExtResource("8_oxeol")

@@ -143,7 +143,7 @@ Alvo = NodePath("../Jogador")
 
 [node name="MonstroCaçar" parent="." node_paths=PackedStringArray("Destino") instance=ExtResource("5_650u3")]
 position = Vector2(161, 113)
-Velocidade = 10.0
+Velocidade = 30.0
 TempoAteVeloxidadeMax = 2.0
 TempoAteVeloxidadeMin = 2.0
 Destino = NodePath("../Jogador")
