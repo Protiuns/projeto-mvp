@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp6nt4gk7l1iw"]
+[gd_scene load_steps=16 format=3 uid="uid://dp6nt4gk7l1iw"]
 
 [ext_resource type="Script" path="res://Componentes/Movimentação/ControleMovimentacao_comp.gd" id="1_lftc2"]
 [ext_resource type="Script" path="res://Componentes/AnimationPlayers/AnimaComAtaque_comp.gd" id="2_sgq4c"]
@@ -15,6 +15,75 @@ radius = 5.0
 height = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_be7kf"]
+
+[sub_resource type="Animation" id="Animation_v35s2"]
+resource_name = "Andando"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-3.05882, 1.89474), Vector2(3, 1.895), Vector2(-6, 1.895), Vector2(-3.05882, 1.89474)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.523599, 0.523599, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4c030"]
+resource_name = "Atacando"
+
+[sub_resource type="Animation" id="Animation_vrpor"]
+resource_name = "Parado"
+
+[sub_resource type="Animation" id="Animation_sf5dx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3.05882, 1.89474)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oah4q"]
+_data = {
+"Andando": SubResource("Animation_v35s2"),
+"Atacando": SubResource("Animation_4c030"),
+"Parado": SubResource("Animation_vrpor"),
+"RESET": SubResource("Animation_sf5dx")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuuok"]
 size = Vector2(15, 6)
@@ -56,6 +125,9 @@ color = Color(1, 0.270588, 0.337255, 1)
 polygon = PackedVector2Array(-7, -7, 0, -10, 8, -7, 10, 2, 7, 9, -1, 10, -8, 7, -11, 0)
 
 [node name="AnimaComAtaque_comp" type="AnimationPlayer" parent="." node_paths=PackedStringArray("Ataques")]
+libraries = {
+"": SubResource("AnimationLibrary_oah4q")
+}
 script = ExtResource("2_sgq4c")
 Ataques = [NodePath("../Esfaqueada")]
 
