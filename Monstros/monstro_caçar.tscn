@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://dp6nt4gk7l1iw"]
 
-[ext_resource type="Script" path="res://Componentes/Movimentação/ControleMovimentacao_comp.gd" id="1_lftc2"]
+[ext_resource type="Script" path="res://Componentes/Atores/Movimentação/ControleMovimentacao_comp.gd" id="1_a7wo6"]
 [ext_resource type="Script" path="res://Componentes/AnimationPlayers/AnimaComAtaque_comp.gd" id="2_sgq4c"]
 [ext_resource type="Script" path="res://Componentes/Vida/VidaComp.gd" id="2_ujhju"]
 [ext_resource type="Script" path="res://Componentes/AlvoDeAcerto/AlvoDeAcerto_comp.gd" id="3_7w8d8"]
-[ext_resource type="Script" path="res://Componentes/Ataque/Ataque_comp.gd" id="4_r8aug"]
+[ext_resource type="Script" path="res://Componentes/AreaDeDeteccao/Ataque/Ataque_comp.gd" id="4_vggf5"]
 [ext_resource type="Script" path="res://Componentes/AreaDeDeteccao/AreaDeDeteccao_comp.gd" id="6_2cp22"]
 [ext_resource type="Script" path="res://Comportamento/ArvoreDeComportamento/Scripts/ArvoreDeComportamentosRaiz.gd" id="7_upytp"]
 [ext_resource type="Script" path="res://Comportamento/ArvoreDeComportamento/Nós/Composição/Sequenciador_adc.gd" id="8_oxeol"]
@@ -213,7 +213,7 @@ _data = {
 size = Vector2(15, 6)
 
 [node name="AtacanteCanhoto" type="CharacterBody2D"]
-script = ExtResource("1_lftc2")
+script = ExtResource("1_a7wo6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.42)
@@ -237,7 +237,8 @@ shape = SubResource("CapsuleShape2D_r6264")
 
 [node name="Esfaqueada" type="Area2D" parent="."]
 position = Vector2(-14, 0)
-script = ExtResource("4_r8aug")
+script = ExtResource("4_vggf5")
+Dano = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esfaqueada"]
