@@ -228,9 +228,10 @@ polygon = PackedVector2Array(-0.761902, 9, -0.761902, 3, 0.857147, -1, -0.761902
 [node name="Vida_comp" type="Node" parent="."]
 script = ExtResource("2_ujhju")
 
-[node name="AlvoDeAcerto_comp" type="Area2D" parent="."]
+[node name="AlvoDeAcerto_comp" type="Area2D" parent="." node_paths=PackedStringArray("Vida")]
 visible = false
 script = ExtResource("3_7w8d8")
+Vida = NodePath("../Vida_comp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlvoDeAcerto_comp"]
 shape = SubResource("CapsuleShape2D_r6264")
@@ -238,7 +239,6 @@ shape = SubResource("CapsuleShape2D_r6264")
 [node name="Esfaqueada" type="Area2D" parent="."]
 position = Vector2(-14, 0)
 script = ExtResource("4_vggf5")
-Dano = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esfaqueada"]
