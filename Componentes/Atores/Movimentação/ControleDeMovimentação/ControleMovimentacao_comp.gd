@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name ControleMovimentacao
+class_name ControleMovimentacao001
 
 var entrada = Vector2.ZERO
 var movimento_vet = Vector2.ZERO

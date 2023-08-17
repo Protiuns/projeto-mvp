@@ -58,7 +58,7 @@ func _EstadoTranzicao(delta):
 			pass
 		
 func _EstadoEntrar(novoEstado , antigoEstado):
-	print(novoEstado)
+	
 	match novoEstado:
 		estados.Parado:
 			arvoreAnimacao.set("parameters/Movimentando/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)

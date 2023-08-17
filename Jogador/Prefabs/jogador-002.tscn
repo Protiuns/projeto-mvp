@@ -1,9 +1,11 @@
-[gd_scene load_steps=48 format=3 uid="uid://b6spunkmdm5tb"]
+[gd_scene load_steps=50 format=3 uid="uid://ckjy42flp8xcb"]
 
-[ext_resource type="Script" path="res://Jogador/Scripts/Jogador.gd" id="1_vees7"]
-[ext_resource type="Script" path="res://Jogador/Scripts/JocadorStates.gd" id="2_ectm6"]
-[ext_resource type="Texture2D" uid="uid://brifeqmx5d3td" path="res://Recursos/Imagens/Assets/LinkinhoSemSobras-Sheet.png" id="3_4n305"]
-[ext_resource type="Script" path="res://Jogador/Scripts/JogadorArvoreAnimacao.gd" id="4_stm8q"]
+[ext_resource type="Script" path="res://Componentes/Atores/Movimentação/ControleDeMovimentação/ControleMovimentacao002_comp.gd" id="1_ci6ke"]
+[ext_resource type="Script" path="res://Jogador/Scripts/JocadorStates.gd" id="2_i2eju"]
+[ext_resource type="Texture2D" uid="uid://brifeqmx5d3td" path="res://Recursos/Imagens/Assets/LinkinhoSemSobras-Sheet.png" id="3_rmmdy"]
+[ext_resource type="Script" path="res://Jogador/Scripts/JogadorArvoreAnimacao.gd" id="4_e5q43"]
+[ext_resource type="Script" path="res://Componentes/Atores/Movimentação/Direcao_comp.gd" id="5_6kmum"]
+[ext_resource type="Script" path="res://Componentes/Atores/Movimentação/Velocidade_comp.gd" id="6_id7dx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to5gb"]
 radius = 3.0
@@ -766,17 +768,19 @@ nodes/Parado/position = Vector2(-53.3333, 0)
 nodes/output/position = Vector2(640, 0)
 node_connections = [&"output", 0, &"Atacando", &"Atacando", 0, &"Movimentando", &"Atacando", 1, &"AtacandoOutroBraço", &"AtacandoOutroBraço", 0, &"Golpe1", &"AtacandoOutroBraço", 1, &"Golpe2", &"Movimentando", 0, &"Parado", &"Movimentando", 1, &"Andando"]
 
-[node name="Jogador" type="CharacterBody2D"]
+[node name="Jogador" type="CharacterBody2D" node_paths=PackedStringArray("VelocidadeComponente")]
+collision_mask = 6
 wall_min_slide_angle = 0.506145
-script = ExtResource("1_vees7")
+script = ExtResource("1_ci6ke")
+VelocidadeComponente = NodePath("Velocidade_comp")
 metadata/_edit_group_ = true
 
 [node name="JogadorStates" type="Node" parent="."]
-script = ExtResource("2_ectm6")
+script = ExtResource("2_i2eju")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
-texture = ExtResource("3_4n305")
+texture = ExtResource("3_rmmdy")
 hframes = 9
 vframes = 11
 frame = 3
@@ -808,4 +812,11 @@ parameters/Movimentando/active = false
 parameters/Movimentando/internal_active = false
 parameters/Movimentando/request = 0
 parameters/Parado/blend_position = Vector2(-0.00349039, 0.921569)
-script = ExtResource("4_stm8q")
+script = ExtResource("4_e5q43")
+
+[node name="Direcao_comp" type="Node" parent="."]
+script = ExtResource("5_6kmum")
+
+[node name="Velocidade_comp" type="Node" parent="." node_paths=PackedStringArray("DirecaoComponete")]
+script = ExtResource("6_id7dx")
+DirecaoComponete = NodePath("../Direcao_comp")

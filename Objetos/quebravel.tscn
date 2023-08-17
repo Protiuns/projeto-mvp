@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccrpf2ipek4b6"]
+
+[ext_resource type="Script" path="res://Componentes/Vida/VidaComp.gd" id="1_3b3ef"]
+[ext_resource type="Script" path="res://Componentes/AlvoDeAcerto/AlvoDeAcerto_comp.gd" id="2_3x62e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7rhe"]
+radius = 47.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kscc3"]
+radius = 69.3542
+
+[node name="Quebravel" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10.065)
+shape = SubResource("CircleShape2D_f7rhe")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, 2.48101)
+scale = Vector2(1, 1.08861)
+color = Color(0.0431373, 0.117647, 0.490196, 1)
+polygon = PackedVector2Array(-45, -28, -31, -34.4302, 3, -36.2674, 30, -35.3488, 53, -28, 54, -7.7907, 57, 21.6047, 50, 51, 26, 56.5116, -12, 57.4302, -45, 50, -50, 24.3605, -49, -5.03488)
+
+[node name="Vida_comp" type="Node" parent="."]
+script = ExtResource("1_3b3ef")
+
+[node name="AlvoDeAcerto_comp" type="Area2D" parent="." node_paths=PackedStringArray("Vida")]
+collision_layer = 2
+script = ExtResource("2_3x62e")
+Vida = NodePath("../Vida_comp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlvoDeAcerto_comp"]
+position = Vector2(0, 14.43)
+shape = SubResource("CircleShape2D_kscc3")
