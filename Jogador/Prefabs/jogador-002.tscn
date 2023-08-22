@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://ckjy42flp8xcb"]
+[gd_scene load_steps=53 format=3 uid="uid://ckjy42flp8xcb"]
 
 [ext_resource type="Script" path="res://Componentes/Atores/Movimentação/ControleDeMovimentação/ControleMovimentacao002_comp.gd" id="1_ci6ke"]
 [ext_resource type="Script" path="res://Jogador/Scripts/JocadorStates.gd" id="2_i2eju"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Jogador/Scripts/JogadorArvoreAnimacao.gd" id="4_e5q43"]
 [ext_resource type="Script" path="res://Componentes/Atores/Movimentação/Direcao_comp.gd" id="5_6kmum"]
 [ext_resource type="Script" path="res://Componentes/Atores/Movimentação/Velocidade_comp.gd" id="6_id7dx"]
+[ext_resource type="Script" path="res://Componentes/Vida/VidaComp.gd" id="7_ok3nm"]
+[ext_resource type="Script" path="res://Componentes/AlvoDeAcerto/AlvoDeAcerto_comp.gd" id="8_jexmb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to5gb"]
 radius = 3.0
@@ -768,6 +770,10 @@ nodes/Parado/position = Vector2(-53.3333, 0)
 nodes/output/position = Vector2(640, 0)
 node_connections = [&"output", 0, &"Atacando", &"Atacando", 0, &"Movimentando", &"Atacando", 1, &"AtacandoOutroBraço", &"AtacandoOutroBraço", 0, &"Golpe1", &"AtacandoOutroBraço", 1, &"Golpe2", &"Movimentando", 0, &"Parado", &"Movimentando", 1, &"Andando"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4ffl"]
+radius = 4.0
+height = 10.0
+
 [node name="Jogador" type="CharacterBody2D" node_paths=PackedStringArray("VelocidadeComponente")]
 collision_mask = 6
 wall_min_slide_angle = 0.506145
@@ -820,3 +826,13 @@ script = ExtResource("5_6kmum")
 [node name="Velocidade_comp" type="Node" parent="." node_paths=PackedStringArray("DirecaoComponete")]
 script = ExtResource("6_id7dx")
 DirecaoComponete = NodePath("../Direcao_comp")
+
+[node name="Vida_comp" type="Node" parent="."]
+script = ExtResource("7_ok3nm")
+
+[node name="AlvoDeAcerto_comp" type="Area2D" parent="." node_paths=PackedStringArray("Vida")]
+script = ExtResource("8_jexmb")
+Vida = NodePath("../Vida_comp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlvoDeAcerto_comp"]
+shape = SubResource("CapsuleShape2D_d4ffl")

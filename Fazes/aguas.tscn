@@ -1,10 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0sq58i6wdswu"]
+[gd_scene load_steps=24 format=3 uid="uid://d0sq58i6wdswu"]
 
-[ext_resource type="PackedScene" uid="uid://bf7a1b6w50nxi" path="res://Jogador/Prefabs/jogador-002.tscn" id="1_2cipx"]
 [ext_resource type="Texture2D" uid="uid://4y8stctxy2hs" path="res://Recursos/Imagens/Assets/TilesTemporários.png" id="2_m70wc"]
 [ext_resource type="Shader" path="res://Recursos/Materiais/Shaiders/aguas.gdshader" id="3_f6mrp"]
 [ext_resource type="PackedScene" uid="uid://khvd146htalo" path="res://Componentes/Camera/controle_de_camera.tscn" id="3_xpkvl"]
 [ext_resource type="PackedScene" uid="uid://ccrpf2ipek4b6" path="res://Objetos/quebravel.tscn" id="5_6iun4"]
+[ext_resource type="PackedScene" uid="uid://b6spunkmdm5tb" path="res://Jogador/Prefabs/jogador-001.tscn" id="5_80b67"]
 
 [sub_resource type="Gradient" id="Gradient_x8eko"]
 offsets = PackedFloat32Array(0.0242215, 0.121107, 0.522491, 0.67128, 0.83391, 1)
@@ -115,10 +115,35 @@ height = 2000
 color_ramp = SubResource("Gradient_fys38")
 noise = SubResource("FastNoiseLite_87y1r")
 
-[node name="Aguas" type="Node2D"]
+[sub_resource type="Gradient" id="Gradient_o4f2k"]
+offsets = PackedFloat32Array(0.081448, 0.239819, 0.452489, 0.760181, 1)
+colors = PackedColorArray(0.106, 0.126367, 0.2, 1, 0.301286, 0.00582861, 0.309572, 1, 0.321569, 0.454902, 0.588235, 1, 0.341176, 0.713726, 0.298039, 1, 0.86, 0.5332, 0.71294, 1)
 
-[node name="Jogador" parent="." instance=ExtResource("1_2cipx")]
-position = Vector2(76, 120)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jwe3w"]
+gradient = SubResource("Gradient_o4f2k")
+
+[sub_resource type="Environment" id="Environment_i6gap"]
+background_mode = 3
+glow_enabled = true
+glow_levels/1 = 5.57
+glow_levels/2 = 2.35
+glow_levels/3 = 2.7
+glow_levels/4 = 1.15
+glow_levels/5 = 3.91
+glow_levels/6 = 2.3
+glow_levels/7 = 1.82
+glow_blend_mode = 1
+fog_enabled = true
+fog_light_color = Color(0.239216, 0.341176, 0.521569, 1)
+volumetric_fog_albedo = Color(0.360784, 0.427451, 1, 1)
+volumetric_fog_detail_spread = 0.615572
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.49
+adjustment_saturation = 3.02
+adjustment_color_correction = SubResource("GradientTexture2D_jwe3w")
+
+[node name="Aguas" type="Node2D"]
 
 [node name="Fundo2" type="Sprite2D" parent="."]
 modulate = Color(0.286275, 0.639216, 1, 1)
@@ -145,3 +170,9 @@ Alvo = NodePath("../Jogador")
 [node name="Quebravel" parent="." instance=ExtResource("5_6iun4")]
 position = Vector2(233, 143)
 scale = Vector2(0.36, 0.36)
+
+[node name="Jogador" parent="." instance=ExtResource("5_80b67")]
+position = Vector2(63, 84)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i6gap")
